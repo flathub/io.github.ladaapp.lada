@@ -28,7 +28,7 @@ modules:
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: d2b4210d745833f8e777380cc538c9ebd6babb93
+        commit: 90aac169625d0a114d295a3d0f5262ab19c74027
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.2.0/lada_mosaic_detection_model_v2.pt"
         sha256: 056756fcab250bcdf0833e75aac33e2197b8809b0ab8c16e14722dcec94269b5
