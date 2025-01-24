@@ -21,7 +21,7 @@ modules:
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
         install -d /app/share
-        mv flatpak/share/* /app/share/
+        mv packaging/flatpak/share/* /app/share/
       - |
         patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -p2 -d /app
         patch -u $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -p2 -d /app
