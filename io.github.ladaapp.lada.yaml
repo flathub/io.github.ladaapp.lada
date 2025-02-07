@@ -16,7 +16,7 @@ modules:
     build-commands:
       - |
         mkdir -p /app/model_weights/3rd_party
-        mv lada_mosaic_detection_model_v2.pt lada_mosaic_edge_detection_model.pth lada_mosaic_restoration_model_bj_pov.pth lada_mosaic_restoration_model_generic_v1.1.pth /app/model_weights/
+        mv lada_mosaic_detection_model_v2.pt lada_mosaic_edge_detection_model.pth lada_mosaic_restoration_model_bj_pov.pth lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
@@ -28,8 +28,8 @@ modules:
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: 53daf6dd829379f09fe0bbb80f627a50929ecbdb
-        tag: v0.5.0
+        commit: 79f868705e99c5d37235b312baf03ce21508e847
+        tag: v0.6.0
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.2.0/lada_mosaic_detection_model_v2.pt"
         sha256: 056756fcab250bcdf0833e75aac33e2197b8809b0ab8c16e14722dcec94269b5
@@ -37,11 +37,8 @@ modules:
         url: "https://github.com/ladaapp/lada/releases/download/v0.1.0/lada_mosaic_edge_detection_model.pth"
         sha256: b9d75d1c574f93287f6597da3f07be79e67d8ac93f3f3ee52caaffa41d7556ab
       - type: file
-        url: "https://github.com/ladaapp/lada/releases/download/v0.1.0/lada_mosaic_restoration_model_bj_pov.pth"
-        sha256: b79de6fcb1fcafd3ce7c954f4ac788be448ec2d82c6e688aaf18b8ba48fb5b47
-      - type: file
-        url: "https://github.com/ladaapp/lada/releases/download/v0.2.1/lada_mosaic_restoration_model_generic_v1.1.pth"
-        sha256: 6ec6542dde73fbc2086d252a041b41881e3194eaa0bac964348e6f7e8aad007c
+        url: "https://github.com/ladaapp/lada/releases/download/v0.6.0/lada_mosaic_restoration_model_generic_v1.2.pth"
+        sha256: d404152576ce64fb5b2f315c03062709dac4f5f8548934866cd01c823c8104ee
       - type: file
         url: "https://drive.usercontent.google.com/download?id=1ulct4RhRxQp1v5xwEmUH7xz7AK42Oqlw&export=download&confirm=t"
         sha256: 5643ca297c13920b8ffd39a0d85296e494683a69e5e8204d662653d24c582766

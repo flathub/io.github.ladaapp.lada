@@ -16,7 +16,7 @@ git clone https://github.com/ladaapp/lada.git # you maybe want to check-out a sp
 cd lada
 python -m venv .venv_build_flatpak
 source .venv_build_flatpak/bin/activate
-pip install req2flatpak
+pip install setuptools req2flatpak
 req2flatpak --requirements-file packaging/requirements-gui.txt --target-platforms 312-x86_64 > lada-pip-dependencies.json
 deactivate
 ````
