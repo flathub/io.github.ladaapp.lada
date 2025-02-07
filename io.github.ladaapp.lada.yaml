@@ -36,7 +36,6 @@ modules:
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.1.0/lada_mosaic_edge_detection_model.pth"
         sha256: b9d75d1c574f93287f6597da3f07be79e67d8ac93f3f3ee52caaffa41d7556ab
-        sha256: b79de6fcb1fcafd3ce7c954f4ac788be448ec2d82c6e688aaf18b8ba48fb5b47
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.5.1-beta3/lada_mosaic_restoration_model_generic_v1.2beta2.pth"
         sha256: d404152576ce64fb5b2f315c03062709dac4f5f8548934866cd01c823c8104ee
