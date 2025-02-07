@@ -28,8 +28,8 @@ modules:
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: 276896ee37527f0f3e203ee4c703e9a5aded80e9
-#        tag: v0.5.0
+        commit: 79f868705e99c5d37235b312baf03ce21508e847
+        tag: v0.6.0
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.2.0/lada_mosaic_detection_model_v2.pt"
         sha256: 056756fcab250bcdf0833e75aac33e2197b8809b0ab8c16e14722dcec94269b5
@@ -37,9 +37,8 @@ modules:
         url: "https://github.com/ladaapp/lada/releases/download/v0.1.0/lada_mosaic_edge_detection_model.pth"
         sha256: b9d75d1c574f93287f6597da3f07be79e67d8ac93f3f3ee52caaffa41d7556ab
       - type: file
-        url: "https://github.com/ladaapp/lada/releases/download/v0.5.1-beta3/lada_mosaic_restoration_model_generic_v1.2beta2.pth"
+        url: "https://github.com/ladaapp/lada/releases/download/v0.6.0/lada_mosaic_restoration_model_generic_v1.2.pth"
         sha256: d404152576ce64fb5b2f315c03062709dac4f5f8548934866cd01c823c8104ee
-        dest-filename: lada_mosaic_restoration_model_generic_v1.2.pth
       - type: file
         url: "https://drive.usercontent.google.com/download?id=1ulct4RhRxQp1v5xwEmUH7xz7AK42Oqlw&export=download&confirm=t"
         sha256: 5643ca297c13920b8ffd39a0d85296e494683a69e5e8204d662653d24c582766
