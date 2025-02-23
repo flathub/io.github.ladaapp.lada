@@ -12,8 +12,9 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/ec/2e/1f9b6ab22d75e07070fb2ddffecebefdfbc2e3306609d4e2b288f0f9d9b1/av-14.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-            "sha256": "a258a03e3f5d19ce599281968402ad5e799cdc0a84f53fe47ac01b27bb61e62a",
+            
+            "url": "https://files.pythonhosted.org/packages/7f/22/0dd8d1d5cad415772bb707d16aea8b81cf75d340d11d3668eea43468c730/av-13.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+            "sha256": "d8aaec2c0bfd024359db3821d679009d4e637e1bee0321d20f61c54ed6b20f41",
             "only-arches": [
                 "x86_64"
             ]
