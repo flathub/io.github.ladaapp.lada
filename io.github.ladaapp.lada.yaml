@@ -9,8 +9,8 @@ finish-args:
   - "--device=dri"
   - "--share=ipc"
   - "--socket=pulseaudio"
-  - "--env=MODEL_WEIGHTS_DIR=/app/model_weights"
-  - "--env=YOLO_DIR=/var/config/yolo"
+  - "--env=LADA_MODEL_WEIGHTS_DIR=/app/model_weights"
+  - "--env=YOLO_CONFIG_DIR=/var/config/yolo"
 modules:
   - lada-pip-dependencies.json
   - name: lada
