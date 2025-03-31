@@ -36,7 +36,7 @@ modules:
         tag: v0.7.0-beta3
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.0-beta3/lada_mosaic_detection_model_v3-yolo11n-seg-beta3.pt"
-        sha256: 78deb93326d45ff724f19fce9f7db8acb005f7246422a7baf91a66613678d984
+        sha256: 5707c3af78a13ef8d60d0c3a3ea420e79745ac5c9b7d792e3a13598fcdedfc8f
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.6.0/lada_mosaic_restoration_model_generic_v1.2.pth"
         sha256: d404152576ce64fb5b2f315c03062709dac4f5f8548934866cd01c823c8104ee
