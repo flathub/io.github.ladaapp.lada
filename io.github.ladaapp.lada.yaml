@@ -19,7 +19,7 @@ modules:
       - |
         mkdir -p /app/model_weights/3rd_party
         mv lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
-        mv lada_mosaic_detection_model_v3-yolo11n-seg-beta3.pt /app/model_weights/lada_mosaic_detection_model_v2.pt
+        mv lada_mosaic_detection_model_v3.pt /app/model_weights/lada_mosaic_detection_model_v3.pt
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
@@ -32,10 +32,10 @@ modules:
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: eecd6bf0c7fbc4fcf1054f88010f68b3b7c8012e
-#        tag: v0.7.0-beta3
+        commit: 695efa459d7a825e7e0451ee34e354edebe8c2cd
+        tag: v0.7.0
       - type: file
-        url: "https://github.com/ladaapp/lada/releases/download/v0.7.0-beta3/lada_mosaic_detection_model_v3-yolo11n-seg-beta3.pt"
+        url: "https://github.com/ladaapp/lada/releases/download/v0.7.0/lada_mosaic_detection_model_v3.pt"
         sha256: 5707c3af78a13ef8d60d0c3a3ea420e79745ac5c9b7d792e3a13598fcdedfc8f
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.6.0/lada_mosaic_restoration_model_generic_v1.2.pth"
