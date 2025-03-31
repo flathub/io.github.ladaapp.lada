@@ -32,8 +32,8 @@ modules:
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: 2350333c149515e5bb3a4b7e01f8dafa8afd8328
-        tag: v0.7.0-beta3
+        commit: eecd6bf0c7fbc4fcf1054f88010f68b3b7c8012e
+#        tag: v0.7.0-beta3
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.0-beta3/lada_mosaic_detection_model_v3-yolo11n-seg-beta3.pt"
         sha256: 5707c3af78a13ef8d60d0c3a3ea420e79745ac5c9b7d792e3a13598fcdedfc8f
