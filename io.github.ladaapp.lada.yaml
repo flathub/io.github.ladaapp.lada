@@ -9,6 +9,8 @@ finish-args:
   - "--device=dri"
   - "--share=ipc"
   - "--socket=pulseaudio"
+  - "--env=LADA_MODEL_WEIGHTS_DIR=/app/model_weights"
+  - "--env=YOLO_CONFIG_DIR=/var/config/yolo"
 modules:
   - lada-pip-dependencies.json
   - name: lada
@@ -16,7 +18,8 @@ modules:
     build-commands:
       - |
         mkdir -p /app/model_weights/3rd_party
-        mv lada_mosaic_detection_model_v2.pt lada_mosaic_edge_detection_model.pth lada_mosaic_restoration_model_bj_pov.pth lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
+        mv lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
+        mv lada_mosaic_detection_model_v3.pt /app/model_weights/lada_mosaic_detection_model_v3.pt
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
@@ -25,17 +28,15 @@ modules:
       - |
         patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -p2 -d /app
         patch -u $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -p2 -d /app
+        patch -u $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -p2 -d /app
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: 79f868705e99c5d37235b312baf03ce21508e847
-        tag: v0.6.0
+        commit: 695efa459d7a825e7e0451ee34e354edebe8c2cd
+        tag: v0.7.0
       - type: file
-        url: "https://github.com/ladaapp/lada/releases/download/v0.2.0/lada_mosaic_detection_model_v2.pt"
-        sha256: 056756fcab250bcdf0833e75aac33e2197b8809b0ab8c16e14722dcec94269b5
-      - type: file
-        url: "https://github.com/ladaapp/lada/releases/download/v0.1.0/lada_mosaic_edge_detection_model.pth"
-        sha256: b9d75d1c574f93287f6597da3f07be79e67d8ac93f3f3ee52caaffa41d7556ab
+        url: "https://github.com/ladaapp/lada/releases/download/v0.7.0/lada_mosaic_detection_model_v3.pt"
+        sha256: 5707c3af78a13ef8d60d0c3a3ea420e79745ac5c9b7d792e3a13598fcdedfc8f
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.6.0/lada_mosaic_restoration_model_generic_v1.2.pth"
         sha256: d404152576ce64fb5b2f315c03062709dac4f5f8548934866cd01c823c8104ee
