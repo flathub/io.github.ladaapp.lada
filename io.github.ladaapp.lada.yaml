@@ -19,7 +19,7 @@ modules:
       - |
         mkdir -p /app/model_weights/3rd_party
         mv lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
-        mv lada_mosaic_detection_model_v3.pt /app/model_weights/lada_mosaic_detection_model_v3.pt
+        mv lada_mosaic_detection_model_v3.1_accurate.pt lada_mosaic_detection_model_v3.1_fast.pt /app/model_weights/
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
@@ -29,14 +29,18 @@ modules:
         patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -u -p4 -d /app/lib/python3.12
         patch -i $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -u -p4 -d /app/lib/python3.12
         patch -i $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -u -p4 -d /app/lib/python3.12
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff | patch -u -p4 -d /usr/local/lib/python3.12
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: 1826893f821f8e67082f88136a69db7c346e6d70
-        #tag: v0.7.0
+        commit: ed1e03ee1a4d312bd2cd5294c05b3e25f26e4ca7
+        tag: v0.7.1
       - type: file
-        url: "https://github.com/ladaapp/lada/releases/download/v0.7.0/lada_mosaic_detection_model_v3.pt"
-        sha256: 5707c3af78a13ef8d60d0c3a3ea420e79745ac5c9b7d792e3a13598fcdedfc8f
+        url: "https://github.com/ladaapp/lada/releases/download/v0.7.1/lada_mosaic_detection_model_v3.1_accurate.pt"
+        sha256: 2b6e5d6cd5a795a4dcc1205b817a7323a4bd3725cef1a7de3a172cb5689f0368
+      - type: file
+        url: "https://github.com/ladaapp/lada/releases/download/v0.7.1/lada_mosaic_detection_model_v3.1_fast.pt"
+        sha256: 25d62894c16bba00468f3bcc160360bb84726b2f92751b5e235578bf2f9b0820
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.6.0/lada_mosaic_restoration_model_generic_v1.2.pth"
         sha256: d404152576ce64fb5b2f315c03062709dac4f5f8548934866cd01c823c8104ee
