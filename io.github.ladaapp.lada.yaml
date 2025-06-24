@@ -32,7 +32,7 @@ modules:
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: 6eb4172ddd27c2ae851fb871c3e78dc805a0c500
+        commit: 1826893f821f8e67082f88136a69db7c346e6d70
         #tag: v0.7.0
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.0/lada_mosaic_detection_model_v3.pt"
