@@ -1,6 +1,6 @@
 id: io.github.ladaapp.lada
 runtime: org.gnome.Platform
-runtime-version: '47'
+runtime-version: '48'
 sdk: org.gnome.Sdk
 command: lada
 finish-args:
@@ -26,14 +26,14 @@ modules:
         install -d /app/share
         mv packaging/flatpak/share/* /app/share/
       - |
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -p2 -d /app
-        patch -u $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -p2 -d /app
-        patch -u $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -p2 -d /app
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -u -p4 -d /app/lib/python3.12
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -u -p4 -d /app/lib/python3.12
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -u -p4 -d /app/lib/python3.12
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: 695efa459d7a825e7e0451ee34e354edebe8c2cd
-        tag: v0.7.0
+        commit: 6eb4172ddd27c2ae851fb871c3e78dc805a0c500
+        #tag: v0.7.0
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.0/lada_mosaic_detection_model_v3.pt"
         sha256: 5707c3af78a13ef8d60d0c3a3ea420e79745ac5c9b7d792e3a13598fcdedfc8f
