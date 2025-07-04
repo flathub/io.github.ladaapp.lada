@@ -33,14 +33,17 @@ modules:
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: ed1e03ee1a4d312bd2cd5294c05b3e25f26e4ca7
-        tag: v0.7.1
+        commit: 3d4d56b0af56753505e9ec7a526ba70c213ef847
+#        tag: v0.7.1
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.1/lada_mosaic_detection_model_v3.1_accurate.pt"
         sha256: 2b6e5d6cd5a795a4dcc1205b817a7323a4bd3725cef1a7de3a172cb5689f0368
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.1/lada_mosaic_detection_model_v3.1_fast.pt"
         sha256: 25d62894c16bba00468f3bcc160360bb84726b2f92751b5e235578bf2f9b0820
+      - type: file
+        url: "https://github.com/ladaapp/lada/releases/download/v0.2.0/lada_mosaic_detection_model_v2.pt"
+        sha256: 3d4d56b0af56753505e9ec7a526ba70c213ef847
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.6.0/lada_mosaic_restoration_model_generic_v1.2.pth"
         sha256: d404152576ce64fb5b2f315c03062709dac4f5f8548934866cd01c823c8104ee
