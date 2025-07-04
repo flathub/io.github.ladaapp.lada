@@ -19,7 +19,7 @@ modules:
       - |
         mkdir -p /app/model_weights/3rd_party
         mv lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
-        mv lada_mosaic_detection_model_v3.1_accurate.pt lada_mosaic_detection_model_v3.1_fast.pt /app/model_weights/
+        mv lada_mosaic_detection_model_v3.1_accurate.pt lada_mosaic_detection_model_v3.1_fast.pt lada_mosaic_detection_model_v2.pt /app/model_weights/
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
