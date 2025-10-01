@@ -26,10 +26,10 @@ modules:
         install -d /app/share
         mv packaging/flatpak/share/* /app/share/
       - |
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -u -p4 -d /app/lib/python3.12
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -u -p4 -d /app/lib/python3.12
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -u -p4 -d /app/lib/python3.12
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff -u -p4 -d /app/lib/python3.12
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -u -p4 -d /app/lib/python3.13
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -u -p4 -d /app/lib/python3.13
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -u -p4 -d /app/lib/python3.13
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff -u -p4 -d /app/lib/python3.13
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
