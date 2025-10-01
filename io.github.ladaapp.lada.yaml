@@ -1,6 +1,6 @@
 id: io.github.ladaapp.lada
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: lada
 finish-args:
@@ -33,8 +33,8 @@ modules:
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: c01c1186054d539a5be94acb2b754dd22ff43337
-        tag: v0.7.2
+        commit: 604a2e9b7ab0f80adb37be9537b628c00c0466c6
+#        tag: v0.7.2
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.1/lada_mosaic_detection_model_v3.1_accurate.pt"
         sha256: 2b6e5d6cd5a795a4dcc1205b817a7323a4bd3725cef1a7de3a172cb5689f0368
