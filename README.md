@@ -17,7 +17,7 @@ cd lada
 python -m venv .venv_build_flatpak
 source .venv_build_flatpak/bin/activate
 pip install setuptools req2flatpak
-req2flatpak --requirements-file packaging/requirements-gui.txt --target-platforms 312-x86_64 > lada-pip-dependencies.json
+req2flatpak --requirements-file packaging/requirements-gui.txt --target-platforms 313-x86_64 > lada-pip-dependencies.json
 deactivate
 ````
 

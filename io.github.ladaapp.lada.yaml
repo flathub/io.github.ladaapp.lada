@@ -1,6 +1,6 @@
 id: io.github.ladaapp.lada
 runtime: org.gnome.Platform
-runtime-version: '48'
+runtime-version: '49'
 sdk: org.gnome.Sdk
 command: lada
 finish-args:
@@ -26,15 +26,15 @@ modules:
         install -d /app/share
         mv packaging/flatpak/share/* /app/share/
       - |
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -u -p4 -d /app/lib/python3.12
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -u -p4 -d /app/lib/python3.12
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -u -p4 -d /app/lib/python3.12
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff -u -p4 -d /app/lib/python3.12
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -u -p4 -d /app/lib/python3.13
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -u -p4 -d /app/lib/python3.13
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -u -p4 -d /app/lib/python3.13
+        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff -u -p4 -d /app/lib/python3.13
     sources:
       - type: git
         url: "https://github.com/ladaapp/lada.git"
-        commit: c01c1186054d539a5be94acb2b754dd22ff43337
-        tag: v0.7.2
+        commit: 28af435e2b8e88091e4aa2a4ad9f8f35f7707c35
+        tag: v0.8.0
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.1/lada_mosaic_detection_model_v3.1_accurate.pt"
         sha256: 2b6e5d6cd5a795a4dcc1205b817a7323a4bd3725cef1a7de3a172cb5689f0368
