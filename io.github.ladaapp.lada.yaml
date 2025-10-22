@@ -32,7 +32,7 @@ modules:
         patch -i $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff -u -p4 -d /app/lib/python3.13
     sources:
       - type: git
-        url: "https://github.com/ladaapp/lada.git"
+        url: "https://codeberg.org/ladaapp/lada.git"
         commit: 62dbae77f63d05581a28b1f5be9cda11ab8fcf50
 #        tag: v0.8.1
       - type: file
