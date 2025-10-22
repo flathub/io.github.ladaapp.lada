@@ -34,7 +34,7 @@ modules:
     sources:
       - type: git
         url: "https://codeberg.org/ladaapp/lada.git"
-        commit: 1e936636dda53ac97dcc0d04f310c6945ec08633
+        commit: 0ff4bb6169c2f28e3d851e29c1eccad74d4c4953
 #        tag: v0.8.1
       - type: file
         url: "https://huggingface.co/ladaapp/lada/resolve/main/lada_mosaic_detection_model_v3.1_accurate.pt?download=true"
