@@ -21,6 +21,7 @@ modules:
         mv lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
         mv lada_mosaic_detection_model_v3.1_accurate.pt lada_mosaic_detection_model_v3.1_fast.pt lada_mosaic_detection_model_v2.pt /app/model_weights/
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
+      - sh translations/compile_po.sh
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
         install -d /app/share
@@ -33,7 +34,7 @@ modules:
     sources:
       - type: git
         url: "https://codeberg.org/ladaapp/lada.git"
-        commit: 62dbae77f63d05581a28b1f5be9cda11ab8fcf50
+        commit: 1e936636dda53ac97dcc0d04f310c6945ec08633
 #        tag: v0.8.1
       - type: file
         url: "https://github.com/ladaapp/lada/releases/download/v0.7.1/lada_mosaic_detection_model_v3.1_accurate.pt"
