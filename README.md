@@ -12,7 +12,7 @@ This project is based on PyTorch/CUDA and there is no available SDK for flatpak 
 
 
 ```shell
-git clone https://github.com/ladaapp/lada.git # you maybe want to check-out a specific tag/commit here
+git clone https://codeberg.org/ladaapp/lada.git # you maybe want to check-out a specific tag/commit here
 cd lada
 python -m venv .venv_build_flatpak
 source .venv_build_flatpak/bin/activate
