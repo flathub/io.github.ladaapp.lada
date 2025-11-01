@@ -21,7 +21,7 @@ modules:
         mv lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
         mv lada_mosaic_detection_model_v3.1_accurate.pt lada_mosaic_detection_model_v3.1_fast.pt lada_mosaic_detection_model_v2.pt /app/model_weights/
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
-      - sh translations/compile_po.sh zh_TW
+      - sh translations/compile_po.sh zh_CN
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
         install -d /app/share
