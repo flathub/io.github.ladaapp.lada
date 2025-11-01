@@ -21,7 +21,7 @@ modules:
         mv lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
         mv lada_mosaic_detection_model_v3.1_accurate.pt lada_mosaic_detection_model_v3.1_fast.pt lada_mosaic_detection_model_v2.pt /app/model_weights/
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
-      - sh translations/compile_po.sh
+      - sh translations/compile_po.sh zh_TW
       - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
       - |
         install -d /app/share
@@ -36,6 +36,8 @@ modules:
         url: "https://codeberg.org/ladaapp/lada.git"
         commit: 646d4fb9b7b7499efde9fb5eb278edb749b2e5fb
         tag: v0.8.2
+      - type: patch
+        path: filter_translations.patch
       - type: file
         url: "https://huggingface.co/ladaapp/lada/resolve/main/lada_mosaic_detection_model_v3.1_accurate.pt?download=true"
         sha256: 2b6e5d6cd5a795a4dcc1205b817a7323a4bd3725cef1a7de3a172cb5689f0368
