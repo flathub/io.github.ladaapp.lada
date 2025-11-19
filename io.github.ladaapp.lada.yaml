@@ -54,4 +54,4 @@ modules:
     sources:
       - type: git
         url: "https://codeberg.org/ladaapp/lada.git"
-        branch: migrate_to_uv
+        commit: 4e390ce2ebfcd6737b5ffe53b5f790191f064293
