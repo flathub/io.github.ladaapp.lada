@@ -9,35 +9,21 @@ finish-args:
   - "--device=dri"
   - "--share=ipc"
   - "--socket=pulseaudio"
+  - "--talk-name=org.gnome.SessionManager" # Post-export automatic system shutdown on GNOME desktops
+  - "--talk-name=org.kde.Shutdown" # Post-export automatic system shutdown on KDE desktops
   - "--env=LADA_MODEL_WEIGHTS_DIR=/app/model_weights"
+  - "--env=LOCALE_DIR=/app/lib/python3.13/site-packages/lada/locale"
   - "--env=YOLO_CONFIG_DIR=/var/config/yolo"
 modules:
-  - lada-pip-dependencies.json
-  - name: lada
+  - lada-python-dependencies.yaml
+  - name: lada-model-weights
     buildsystem: simple
     build-commands:
       - |
         mkdir -p /app/model_weights/3rd_party
-        mv lada_mosaic_restoration_model_generic_v1.2.pth /app/model_weights/
-        mv lada_mosaic_detection_model_v3.1_accurate.pt lada_mosaic_detection_model_v3.1_fast.pt lada_mosaic_detection_model_v2.pt /app/model_weights/
+        mv lada_*.pt{,h} /app/model_weights/
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
-      - sh translations/compile_po.sh zh_CN
-      - python3 -m pip install --prefix=/app --no-deps '.[basicvsrpp,gui]'
-      - |
-        install -d /app/share
-        mv packaging/flatpak/share/* /app/share/
-      - |
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/adjust_mmengine_resume_dataloader.patch -u -p4 -d /app/lib/python3.13
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch -u -p4 -d /app/lib/python3.13
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch -u -p4 -d /app/lib/python3.13
-        patch -i $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff -u -p4 -d /app/lib/python3.13
     sources:
-      - type: git
-        url: "https://codeberg.org/ladaapp/lada.git"
-        commit: 646d4fb9b7b7499efde9fb5eb278edb749b2e5fb
-        tag: v0.8.2
-      - type: patch
-        path: filter_translations.patch
       - type: file
         url: "https://huggingface.co/ladaapp/lada/resolve/main/lada_mosaic_detection_model_v3.1_accurate.pt?download=true"
         sha256: 2b6e5d6cd5a795a4dcc1205b817a7323a4bd3725cef1a7de3a172cb5689f0368
@@ -54,3 +40,22 @@ modules:
         url: "https://drive.usercontent.google.com/download?id=1ulct4RhRxQp1v5xwEmUH7xz7AK42Oqlw&export=download&confirm=t"
         sha256: 5643ca297c13920b8ffd39a0d85296e494683a69e5e8204d662653d24c582766
         dest-filename: clean_youknow_video.pth
+  - name: lada
+    buildsystem: simple
+    build-commands:
+      - sh translations/compile_po.sh --release
+      - python3 -m pip install --prefix=/app --no-deps --no-build-isolation '.[gui]'
+      - |
+        mkdir -p /app/share/applications /app/share/metainfo /app/share/icons/hicolor/128x128/apps
+        install -m 644 packaging/flatpak/share/io.github.ladaapp.lada.desktop /app/share/applications
+        install -m 644 packaging/flatpak/share/io.github.ladaapp.lada.metainfo.xml /app/share/metainfo
+        install -m 644 packaging/flatpak/share/io.github.ladaapp.lada.png /app/share/icons/hicolor/128x128/apps
+      - |
+        patch -u -p1 -d /app/lib/python3.13/site-packages < $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch
+        patch -u -p1 -d /app/lib/python3.13/site-packages < $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch
+        patch -u -p1 -d /app/lib/python3.13/site-packages < $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff
+    sources:
+      - type: git
+        url: "https://codeberg.org/ladaapp/lada.git"
+        commit: 1ce763d30a2d385fdb5b33452ef53126b1d79dfc
+        tag: v0.9.0
