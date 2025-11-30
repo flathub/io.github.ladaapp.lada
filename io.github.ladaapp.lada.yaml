@@ -12,6 +12,7 @@ finish-args:
   - "--talk-name=org.gnome.SessionManager" # Post-export automatic system shutdown on GNOME desktops
   - "--talk-name=org.kde.Shutdown" # Post-export automatic system shutdown on KDE desktops
   - "--env=LADA_MODEL_WEIGHTS_DIR=/app/model_weights"
+  - "--env=LOCALE_DIR=/app/lib/python3.13/site-packages/lada/locale"
   - "--env=YOLO_CONFIG_DIR=/var/config/yolo"
 modules:
   - lada-python-dependencies.yaml
@@ -56,4 +57,5 @@ modules:
     sources:
       - type: git
         url: "https://codeberg.org/ladaapp/lada.git"
-        commit: b6948d68e46704e0c80d5f8ae7d106cb626cfe39
+        commit: 1ce763d30a2d385fdb5b33452ef53126b1d79dfc
+        commit: v0.9.0
