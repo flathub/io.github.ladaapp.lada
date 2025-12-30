@@ -9,7 +9,6 @@ finish-args:
   - "--device=dri"
   - "--share=ipc"
   - "--socket=pulseaudio"
-  - "--filesystem=/tmp" # For MP4 Fast Start (aka Export Preview) feature the temporary video file needs to be accessible by the host so it can be opened. Using same /tmp inside the sandbox and host seems to be the simplest way.
   - "--talk-name=org.gnome.SessionManager" # Post-export automatic system shutdown on GNOME desktops
   - "--talk-name=org.kde.Shutdown" # Post-export automatic system shutdown on KDE desktops
   - "--env=LADA_MODEL_WEIGHTS_DIR=/app/model_weights"
