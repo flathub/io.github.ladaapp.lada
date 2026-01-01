@@ -54,5 +54,5 @@ modules:
     sources:
       - type: git
         url: "https://codeberg.org/ladaapp/lada.git"
-        commit: 21a3cb7e8d3c03e8e04d0a8234db53e921634f30
+        commit: 1dcf58e412b0fe5659268b38cbfee7ef4105357f
         tag: v0.10.0
