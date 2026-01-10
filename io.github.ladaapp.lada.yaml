@@ -25,6 +25,9 @@ modules:
         mv clean_youknow_video.pth /app/model_weights/3rd_party/
     sources:
       - type: file
+        url: "https://huggingface.co/ladaapp/lada/resolve/main/lada_mosaic_detection_model_v2.pt?download=true"
+        sha256: 056756fcab250bcdf0833e75aac33e2197b8809b0ab8c16e14722dcec94269b5
+      - type: file
         url: "https://huggingface.co/ladaapp/lada/resolve/main/lada_mosaic_detection_model_v4_accurate.pt?download=true"
         sha256: c244d7e49d8f88e264b8dc15f91fb21f5908ad8fb6f300b7bc88462d0801bc1f
       - type: file
@@ -54,5 +57,5 @@ modules:
     sources:
       - type: git
         url: "https://codeberg.org/ladaapp/lada.git"
-        commit: 1dcf58e412b0fe5659268b38cbfee7ef4105357f
+        commit: 51c8adb3717f96ad0f2f91d35f7bd9ec0f84c3b1
         tag: v0.10.0
