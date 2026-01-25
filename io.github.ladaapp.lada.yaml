@@ -14,6 +14,15 @@ finish-args:
   - "--env=LADA_MODEL_WEIGHTS_DIR=/app/model_weights"
   - "--env=LOCALE_DIR=/app/lib/python3.13/site-packages/lada/locale"
   - "--env=YOLO_CONFIG_DIR=/var/config/yolo"
+add-extensions:
+  io.github.ladaapp.lada.extensions:
+    directory: extensions
+    merge-dirs: lib;bin
+    no-autodownload: true
+    autodelete: true
+    subdirectories: true
+cleanup-commands:
+  - mkdir ${FLATPAK_DEST}/extensions
 modules:
   - lada-python-dependencies.yaml
   - name: lada-model-weights
