@@ -70,7 +70,6 @@ modules:
         url: "https://codeberg.org/ladaapp/lada.git"
         #commit: eeee95bae7f5556a84cf16853c994da6d8e63430
         #tag: v0.10.1
-        branch: main
         commit: 314fc1e6c5fe1cd26d34128fb138e796acd2d7e9
   - name: intel-onevpl-runtime # Needed for QSV encoders as it's not included in org.freedesktop.Platform.VAAPI.Intel
     buildsystem: cmake-ninja
