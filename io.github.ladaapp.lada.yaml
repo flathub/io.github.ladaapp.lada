@@ -65,6 +65,7 @@ modules:
         patch -u -p1 -d /app/lib/python3.13/site-packages < $FLATPAK_BUILDER_BUILDDIR/patches/increase_mms_time_limit.patch
         patch -u -p1 -d /app/lib/python3.13/site-packages < $FLATPAK_BUILDER_BUILDDIR/patches/remove_ultralytics_telemetry.patch
         patch -u -p1 -d /app/lib/python3.13/site-packages < $FLATPAK_BUILDER_BUILDDIR/patches/fix_loading_mmengine_weights_on_torch26_and_higher.diff
+    sources:
       - type: git
         url: "https://codeberg.org/ladaapp/lada.git"
         #commit: eeee95bae7f5556a84cf16853c994da6d8e63430
