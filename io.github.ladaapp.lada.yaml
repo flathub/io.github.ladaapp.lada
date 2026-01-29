@@ -16,6 +16,7 @@ finish-args:
   - "--env=YOLO_CONFIG_DIR=/var/config/yolo"
 add-extensions:
   io.github.ladaapp.lada.extensions:
+    versions: 'stable;beta'
     directory: extensions
     merge-dirs: lib;bin
     no-autodownload: true
