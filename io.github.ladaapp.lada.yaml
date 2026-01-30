@@ -16,6 +16,7 @@ finish-args:
   - "--env=YOLO_CONFIG_DIR=/var/config/yolo"
   - "--env=PYTHONPATH=/app/extensions/lib/python3.13/site-packages"
   - "--env=LD_LIBRARY_PATH=/app/lib"
+  - "--env=LIBVA_MESSAGING_LEVEL=1" # set log level to error to suppress initialization logs at startup
 add-extensions:
   io.github.ladaapp.lada.extensions:
     versions: 'stable;beta'
