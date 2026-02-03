@@ -21,6 +21,7 @@ add-extensions:
   io.github.ladaapp.lada.extensions:
     versions: 'stable;beta'
     directory: extensions
+    add-ld-path: lib
     merge-dirs: lib;bin
     no-autodownload: true
     autodelete: true
